@@ -21,8 +21,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.IntOffset
@@ -61,31 +59,16 @@ fun TvCursorOverlay(
         .scale(clickScale),
       contentAlignment = Alignment.Center
     ) {
-      // Glow and ring
-      Canvas(modifier = Modifier.size(36.dp)) {
-        val center = Offset(size.width / 2f, size.height / 2f)
-
-        // Outer glow
-        drawCircle(
-          brush = Brush.radialGradient(
-            colors = listOf(
-              Color(0x8000E5FF),
-              Color(0x303D5AFE),
-              Color.Transparent
-            ),
-            center = center,
-            radius = size.width / 2f
-          )
-        )
-
-        // Distinctive TV cursor outer ring
+      // High performance solid geometry (Zero gradients, zero GPU shader recalculation)
+      Canvas(modifier = Modifier.size(32.dp)) {
+        // Crisp high-contrast outer ring with solid color
         drawCircle(
           color = Color(0xFF00E5FF),
-          radius = 12.dp.toPx(),
+          radius = 11.dp.toPx(),
           style = Stroke(width = 2.5.dp.toPx())
         )
 
-        // Center click target point
+        // Center solid target point
         drawCircle(
           color = Color.White,
           radius = 3.5.dp.toPx()
