@@ -1,0 +1,6 @@
+{
+  "name": "CineJoy TV",
+  "description": "Native Google TV application for CineJoy with remote D-pad navigation, virtual mouse cursor, 10-foot TV zoom, and full-screen video support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

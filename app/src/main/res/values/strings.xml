@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CineJoy TV</string>
+    <string name="default_url">https://cinejoy.to/</string>
+    <string name="remote_mode_cursor">Virtual Cursor</string>
+    <string name="remote_mode_scroll">D-Pad Scroll</string>
+    <string name="press_menu_hint">Press Menu on remote for TV controls</string>
+</resources>
